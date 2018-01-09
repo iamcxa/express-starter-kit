@@ -19,22 +19,6 @@
         <strong><%= user.username %></strong>
         | &nbsp;
         <a href="/api/user/<%= user.id %>/destroy" class="btn btn-xs btn-warning">delete</a>
-        <ul>
-          | Create task
-          <form action="/api/user/<%= user.id %>/tasks/create" method="post" class="form-inline">
-            <div class="form-group">
-              <input class="input-sm form-control" type="text" name="title"/>
-              <input class="btn btn-sm btn-default" type="submit"/>
-            </div>
-          </form>
-          <% user.Tasks.forEach(task => { %>
-            <li>
-              <strong><%= task.title %></strong>
-              | &nbsp;
-              <a href="/api/user/<%= user.id %>/tasks/<%= task.id %>/destroy" class="btn btn-xs btn-warning">delete</a>
-            </li>
-          <% }); %>
-        </ul>
       </li>
     <% }); %>
   </ul>
